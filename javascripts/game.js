@@ -487,7 +487,7 @@ function getTimeTheoremGain() {
     if (player.achievements.includes("r137") && player.dilation.active) ttGain = ttGain.times(2);
     return ttGain;
 }
-
+a.money.mult
 function getETA(cost) {
     var a = 100;
     if (player.money.gte(cost)) return 0
@@ -1047,7 +1047,7 @@ function buyEternityUpgrade(name, cost) {
     }
 }
 
-
+player.mult
 function buyEPMult() {
     if (player.eternityPoints.gte(player.epmultCost)) {
         player.epmult = player.epmult.times(5)
@@ -1918,7 +1918,7 @@ document.getElementById("importbtn").onclick = function () {
         totalMult = 1
         currentMult = 1
         infinitiedMult = 1
-        achievementMult = 1
+        achievementMult = 100
         challengeMult = 1
         unspentBonus = 1
         infDimPow = 1
@@ -4242,7 +4242,7 @@ function startDilatedEternity() {
     var totalMult = 1
     var currentMult = 1
     var infinitiedMult = 1
-    var achievementMult = 1
+    var achievementMult = 100
     var challengeMult = 1
     var unspentBonus = 1
     var postc8Mult = new Decimal(0)
@@ -4775,7 +4775,7 @@ function gameLoop(diff) {
                 player[name + 'Amount'] = player[name + 'Amount'].plus(getDimensionProductionPerSecond(tier + 1).times(diff / 100));
             }
         }
-
+base
         if (player.currentChallenge == "challenge3" || player.currentChallenge == "postc1") {
             player.money = player.money.plus(getDimensionProductionPerSecond(1).times(diff/10).times(player.chall3Pow));
             player.totalmoney = player.totalmoney.plus(getDimensionProductionPerSecond(1).times(diff/10).times(player.chall3Pow));
@@ -5945,7 +5945,7 @@ init();
 var totalMult = 1
 var currentMult = 1
 var infinitiedMult = 1
-var achievementMult = 1
+var achievementMult = 100
 var challengeMult = 1
 var unspentBonus = 1
 var postc8Mult = new Decimal(0)
@@ -5956,7 +5956,7 @@ setInterval( function() {
     currentMult = Math.pow(player.money.e+1, 0.5)
     if (player.timestudy.studies.includes(31)) infinitiedMult = 1 + Math.pow(Math.log10(getInfinitied()+1)*10, 4)
     else infinitiedMult = 1+Math.log10(getInfinitied()+1)*10
-    achievementMult = Math.max(Math.pow((player.achievements.length-30-getSecretAchAmount()), 3)/40,1)
+    achievementMult = 100
     challengeMult = Decimal.max(10*3000/worstChallengeTime, 1)
     unspentBonus = player.infinityPoints.dividedBy(2).pow(1.5).plus(1)
     mult18 = getDimensionFinalMultiplier(1).times(getDimensionFinalMultiplier(8)).pow(0.02)
