@@ -582,7 +582,7 @@ if (player.version < 5) {
   totalMult = Math.pow(player.totalmoney.e+1, 0.5)
   currentMult = Math.pow(player.money.e+1, 0.5)
   infinitiedMult = 1+Math.log10(getInfinitied()+1)*10
-  achievementMult = 10 + Math.max(Math.pow((player.achievements.length-30-getSecretAchAmount()), 3)/40,1)
+  achievementMult = 100
   challengeMult = Decimal.max(10*3000/worstChallengeTime, 1)
   unspentBonus = player.infinityPoints.dividedBy(2).pow(1.5).plus(1)
   transformSaveToDecimal();
@@ -659,7 +659,7 @@ function change_save(saveId) {
   totalMult = 1
   currentMult = 1
   infinitiedMult = 1
-  achievementMult = 1
+  achievementMult = 100
   challengeMult = 1
   unspentBonus = 1
   infDimPow = 1
